@@ -6,5 +6,16 @@
   "repository": {
     "url": "https://github.com/atushi1841/japan-ec-apify-mcp",
     "source": "github"
-  }
+  },
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/atushi1841/japan-ec-apify-mcp/releases/download/v0.1.0/server.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "6fc09ce68188172572368eba995a066e45c11693df8f6474dbbe0e25934da871",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
 }
