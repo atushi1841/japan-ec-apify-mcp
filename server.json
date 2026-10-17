@@ -1,18 +1,19 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.atushi1841/japan-ec-apify-mcp",
-  "description": "Japanese e-commerce MCP via Apify actors: Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku.",
-  "version": "0.1.1",
+  "description": "x402-enabled MCP server wrapping Apify actors for Japanese e-commerce search (Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku). Pay-per-call micro-payments ($0.001 USDC/call) for AI agents.",
   "repository": {
     "url": "https://github.com/atushi1841/japan-ec-apify-mcp",
     "source": "github"
   },
+  "version": "0.2.0",
+  "title": "Japan E-Commerce Apify MCP (x402 Pay-Per-Call)",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/atushi1841/japan-ec-apify-mcp/releases/download/v0.1.1/server.mcpb",
-      "version": "0.1.1",
-      "fileSha256": "6fc09ce68188172572368eba995a066e45c11693df8f6474dbbe0e25934da871",
+      "identifier": "https://github.com/atushi1841/japan-ec-apify-mcp/releases/download/v0.2.0/server.mcpb",
+      "version": "0.2.0",
+      "fileSha256": "53d229e581509e5a1b1433beb5c7a48092810128ea8395e19be1bfeb8d28fe59",
       "transport": {
         "type": "stdio"
       }

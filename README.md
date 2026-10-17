@@ -1,15 +1,49 @@
 # japan-ec-apify-mcp
 
-## MCP Registry
+An x402-enabled Model Context Protocol (MCP) server wrapping Apify Actors for Japanese e-commerce marketplaces (Mercari Japan, Yahoo! Auctions, Rakuten, SUUMO, Kakaku.com).
 
-This server is registered on the official [MCP Registry](https://registry.modelcontextprotocol.io).
-Find it via search: [japan-ec-apify-mcp](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.japan-ec-apify-mcp)
+Enables AI agents (Claude Desktop, Cursor, AutoGPT) to execute paid API searches on-demand using the x402 protocol ($0.001 USDC / call).
 
-## Apify Store
+## Features
 
-- [japan-market-mcp](https://apify.com/store/actors/japan-market-mcp) — Apify Store actor (total runs: 604)
-- [mercari-japan-search-scraper](https://apify.com/store/actors/mercari-japan-search-scraper) — Apify Store actor (total runs: 187)
-- [yahoo-auctions-japan-scraper](https://apify.com/store/actors/yahoo-auctions-japan-scraper) — Apify Store actor (total runs: 173)
-- [rakuten-market-scraper](https://apify.com/store/actors/rakuten-market-scraper) — Apify Store actor (total runs: 44)
-- [suumo-japan-real-estate-scraper](https://apify.com/store/actors/suumo-japan-real-estate-scraper) — Apify Store actor (total runs: 69)
-- [japan-kakaku-price-search](https://apify.com/store/actors/japan-kakaku-price-search) — Apify Store actor (total runs: 153)
+- **x402 Micropayments Protocol Support**: HTTP 402 / EIP-712 payment authorization for AI agents
+- **Apify Actor Integration**: Directly connects with `fruitful_quintessence/mercari-japan-search-scraper`
+- **Multi-Transport**: Runs over stdio, HTTP / SSE
+- **Official MCP Registry Compatible**: Registered on modelcontextprotocol.io registry
+
+## Installation & Usage
+
+### 1. FastMCP stdio / Claude Desktop
+
+Add to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "japan-ec-apify-mcp": {
+      "command": "python3",
+      "args": ["/path/to/scripts/mcp_x402_server.py"]
+    }
+  }
+}
+```
+
+### 2. x402 Payment Flow Example
+
+When calling `search_mercari_japan(keyword="CBR250RR")`:
+
+1. Server returns `isError: true` with x402 `PaymentRequired` payload ($0.001 USDC required).
+2. Agent signs EIP-712 payment authorization and re-sends request with `_meta["x402/payment"]`.
+3. Server validates payment signature, retrieves Mercari listings, and returns data with `_meta["x402/payment-response"]`.
+
+## Verification
+
+```bash
+python3 -m py_compile scripts/mcp_x402_server.py
+```
+
+## Related Links
+
+- [Apify Store Actor](https://apify.com/fruitful_quintessence/mercari-japan-search-scraper)
+- [MCP Registry Entry](https://registry.modelcontextprotocol.io)
+- [x402 Specification v2](https://github.com/coinbase/x402)
