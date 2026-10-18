@@ -1,0 +1,77 @@
+{
+  "manifest_version": "0.4",
+  "name": "japan-ec-apify-mcp",
+  "display_name": "Japan E-Commerce Apify MCP (x402 Pay-Per-Call)",
+  "version": "0.2.1",
+  "description": "x402-enabled MCP server wrapping Apify actors for Japanese e-commerce search (Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku). Apify Store: https://apify.com/fruitful_quintessence/acts/whSePszWpMtfeLYBp",
+  "long_description": "MCP server with x402 micropayment support for Japanese e-commerce Apify actors. Single tool: search_mercari_japan — searches Mercari Japan listings with pay-per-call micro-payments ($0.001 USDC/call). Apify Store: https://apify.com/fruitful_quintessence/acts/whSePszWpMtfeLYBp",
+  "author": {
+    "name": "atushi1841"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atushi1841/japan-ec-apify-mcp"
+  },
+  "homepage": "https://github.com/atushi1841/japan-ec-apify-mcp",
+  "documentation": "https://github.com/atushi1841/japan-ec-apify-mcp",
+  "support": "https://github.com/atushi1841/japan-ec-apify-mcp/issues",
+  "server": {
+    "type": "python",
+    "entry_point": "scripts/mcp_x402_server.py",
+    "mcp_config": {
+      "command": "python",
+      "args": ["${__dirname}/scripts/mcp_x402_server.py"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "python": ">=3.12"
+    }
+  },
+  "keywords": [
+    "japan",
+    "ec",
+    "mercari",
+    "yahoo auctions",
+    "rakuten",
+    "suumo",
+    "kakaku",
+    "apify",
+    "x402",
+    "mcp"
+  ],
+  "license": "MIT",
+  "privacy_policies": [],
+  "tools": [
+    {
+      "name": "search_mercari_japan",
+      "description": "Search Mercari Japan listings with x402 micro-payment authorization. $0.001 USDC/call.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "description": "Japanese or English product keyword (e.g., 'CBR250RR', 'Pokemon Card 151')"
+          },
+          "max_items": {
+            "type": "integer",
+            "default": 10,
+            "description": "Max items to collect (default 10)"
+          },
+          "price_min": {
+            "type": "integer",
+            "default": 0,
+            "description": "Min price in JPY (0 for no limit)"
+          },
+          "price_max": {
+            "type": "integer",
+            "default": 0,
+            "description": "Max price in JPY (0 for no limit)"
+          }
+        },
+        "required": ["keyword"]
+      }
+    }
+  ]
+}

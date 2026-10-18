@@ -1,0 +1,15 @@
+# Smithery.ai configuration for japan-ec-apify-mcp MCP
+description: "Japan E-Commerce Apify MCP — Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku.com via Apify actors. Apify Store: https://apify.com/fruitful_quintessence/acts/whSePszWpMtfeLYBp"
+repositoryUrl: https://github.com/atushi1841/japan-ec-apify-mcp
+iconUrl: https://raw.githubusercontent.com/atushi1841/japan-ec-apify-mcp/main/icon.png
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |
+    (config) => ({
+      command: 'python',
+      args: ['${__dirname}/scripts/mcp_x402_server.py']
+    })
+exampleConfig: {}
