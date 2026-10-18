@@ -41,6 +41,7 @@ jobs:
         run: mcp-publisher login github-oidc
 
       - name: Publish server.json
+        continue-on-error: true
         if: ${{ inputs.publish }}
         run: mcp-publisher publish
 
