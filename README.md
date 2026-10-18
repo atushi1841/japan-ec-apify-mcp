@@ -47,3 +47,9 @@ python3 -m py_compile scripts/mcp_x402_server.py
 - [Apify Store Actor](https://apify.com/fruitful_quintessence/mercari-japan-search-scraper)
 - [MCP Registry Entry](https://registry.modelcontextprotocol.io)
 - [x402 Specification v2](https://github.com/coinbase/x402)
+
+---
+## Data & Store
+
+- **Apify Store:** https://apify.com/fruitful_quintessence
+- **Gumroad datasets:** https://atushi5.gumroad.com/l/kutuxe
