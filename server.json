@@ -1,19 +1,19 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.atushi1841/japan-ec-apify-mcp",
-  "description": "Japan E-Commerce Apify MCP — Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku.com via Apify actors. Apify Store: https://apify.com/fruitful_quintessence/acts/whSePszWpMtfeLYBp",
+  "description": "Japan EC Apify MCP. Store: https://apify.com/fruitful_quintessence/acts/whSePszWpMtfeLYBp",
   "repository": {
     "url": "https://github.com/atushi1841/japan-ec-apify-mcp",
     "source": "github"
   },
-  "version": "0.2.1",
+  "version": "0.2.2",
   "title": "Japan E-Commerce Apify MCP (x402 Pay-Per-Call)",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/atushi1841/japan-ec-apify-mcp/releases/download/v0.2.1/server.mcpb",
-      "version": "0.2.1",
-      "fileSha256": "e6974505019d37e63448ab8d45554dddebb33a95ee395a970cc1f338c6cfdbe4",
+      "identifier": "https://github.com/atushi1841/japan-ec-apify-mcp/releases/download/v0.2.2/server.mcpb",
+      "version": "0.2.2",
+      "fileSha256": "41c208ccb7a971bcc79179f150fd74df3e108c0d0a6e7d2a00e69c8e0064a728",
       "transport": {
         "type": "stdio"
       }
