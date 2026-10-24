@@ -6,7 +6,7 @@
     "url": "https://github.com/atushi1841/japan-ec-apify-mcp",
     "source": "github"
   },
-  "version": "0.2.6",
+  "version": "0.2.7",
   "title": "Japan E-Commerce Apify MCP (x402 Pay-Per-Call)",
   "packages": [
     {
